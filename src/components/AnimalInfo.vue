@@ -1,6 +1,6 @@
 <template>
   <q-card class="q-pt-md q-ma-sm text-center">
-    <p class="text-h6 q-pt-lg text-center">
+    <p class="text-h6 text-center">
       {{ animal.name }}
       <q-badge align="top">{{ animal.animal_type }}</q-badge>
     </p>
