@@ -12,7 +12,10 @@
       Max weight: {{ lbsTokg(animal.weight_max) }} (kg.)
     </p>
     <p class="text-subtitle1 q-mb-xs" :class="olderAnimal ? 'red' : 'green'">
-      Long life: {{ animal.lifespan }}
+      Long life: {{ animal.lifespan }} yr.
+    </p>
+    <p class="text-subtitle1 q-mb-xs" :class="biggerAnimal ? 'red' : 'green'">
+      Size: {{ ftToMeter(animal.length_max) }} m
     </p>
     <q-img
       class="q-mb-xl borderRadius"
@@ -59,10 +62,14 @@ export default {
     animal: Object,
     olderAnimal: Boolean,
     heavierAnimal: Boolean,
+    biggerAnimal: Boolean,
   },
   methods: {
     lbsTokg(value) {
       return Math.round(Number(value) * 453) / 1000;
+    },
+    ftToMeter(value) {
+      return Math.round(Number(value) * 30.5) / 100;
     },
   },
 };

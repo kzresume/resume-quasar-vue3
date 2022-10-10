@@ -7,6 +7,7 @@
         :animal="animalData[0]"
         :olderAnimal="!olderAnimal"
         :heavierAnimal="!heavierAnimal"
+        :biggerAnimal="!biggerAnimal"
       />
       <AnimalInfo
         v-if="animalArray"
@@ -14,6 +15,7 @@
         :animal="animalData[1]"
         :olderAnimal="olderAnimal"
         :heavierAnimal="heavierAnimal"
+        :biggerAnimal="biggerAnimal"
       />
     </div>
   </q-page>
@@ -44,10 +46,13 @@ export default {
       return Array.isArray(this.animalData);
     },
     olderAnimal() {
-      return this.animalData[0].lifespan > this.animalData[1].lifespan;
+      return Number(this.animalData[0].lifespan) > Number(this.animalData[1].lifespan);
     },
     heavierAnimal() {
-      return this.animalData[0].weight_max > this.animalData[1].weight_max;
+      return Number(this.animalData[0].weight_max) > Number(this.animalData[1].weight_max);
+    },
+    biggerAnimal() {
+      return Number(this.animalData[0].length_max) > Number(this.animalData[1].length_max);
     },
   },
   data() {
