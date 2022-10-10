@@ -1,5 +1,5 @@
 <template>
-  <q-page class="">
+  <q-page class="bg-light-green-2">
     <div class="row">
       <AnimalInfo
         v-if="animalArray"

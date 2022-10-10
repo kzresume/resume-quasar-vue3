@@ -6,9 +6,9 @@
     </p>
 
     <p class="text-weight-bold">Latino {{ animal.latin_name }}</p>
-    <p class="text-h6">Habitat: {{ animal.habitat }}</p>
-    <p class="text-h6">Diet: {{ animal.diet }}</p>
-    <p class="text-h6">Geo range:{{ animal.geo_range }}</p>
+    <p class="text-subtitle1">Habitat: {{ animal.habitat }}</p>
+    <p class="text-subtitle1">Diet: {{ animal.diet }}</p>
+    <p class="text-subtitle1">Geo range:{{ animal.geo_range }}</p>
     <p class="text-h6">Max weight:</p>
     <p class="text-h6" :class="compareAnimal.weight ? 'red' : 'green'">
       {{ animal.weight_max }} (lbs.)

@@ -15,7 +15,7 @@
     </q-header>
     <MainApp :animalNb="animalNb" />
     <q-footer>
-      <q-toolbar color="positive">
+      <q-toolbar class="bg-positive glossy" >
         <q-space />
         <q-toolbar-title class="text-center" color="positive">CV 2022</q-toolbar-title>
         <q-space />
