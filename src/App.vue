@@ -1,5 +1,5 @@
 <template>
-  <q-layout class="bg-green glossy">
+  <q-layout class="bg-light-green-1 glossy">
     <q-header elevated>
       <q-toolbar class="bg-positive glossy text-white">
         <q-toolbar-title>Random Animal Compare</q-toolbar-title>
@@ -35,9 +35,9 @@
     <q-footer>
       <q-toolbar class="bg-positive glossy">
         <q-space />
-        <q-toolbar-title class="text-center" color="positive"
-          >CV 2022</q-toolbar-title
-        >
+        <q-toolbar-title class="text-center" color="positive">
+          CV 2022
+        </q-toolbar-title>
         <q-space />
       </q-toolbar>
     </q-footer>

@@ -1,16 +1,16 @@
 <template>
   <q-page class="bg-light-green-2">
-    <div class="row">
+    <div class="row q-pt-xl justify-around">
       <AnimalInfo
         v-if="animalArray"
-        class="col-12 col-md-6"
+        class="col-12 col-md-5"
         :animal="animalData[0]"
         :olderAnimal="!olderAnimal"
         :heavierAnimal="!heavierAnimal"
       />
       <AnimalInfo
         v-if="animalArray"
-        class="col-12 col-md-6"
+        class="col-12 col-md-5"
         :animal="animalData[1]"
         :olderAnimal="olderAnimal"
         :heavierAnimal="heavierAnimal"

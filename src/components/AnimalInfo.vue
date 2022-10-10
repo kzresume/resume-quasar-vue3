@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pt-md text-center">
+  <q-card class=" q-ma-sm text-center">
     <p class="text-h5 q-pt-xl text-center">
       {{ animal.name }}
       <q-badge align="top">{{ animal.animal_type }}</q-badge>
@@ -36,7 +36,7 @@
         {{ animal.geo_range }}
       </div>
     </q-img>
-  </div>
+  </q-card>
 </template>
 
 <style>
