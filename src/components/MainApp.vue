@@ -47,7 +47,7 @@ export default {
       return this.animalData[0].lifespan > this.animalData[1].lifespan;
     },
     heavierAnimal() {
-      return this.animalData[0].weight_max < this.animalData[1].weight_max;
+      return this.animalData[0].weight_max > this.animalData[1].weight_max;
     },
   },
   data() {
