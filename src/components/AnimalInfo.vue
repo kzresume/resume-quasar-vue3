@@ -24,7 +24,7 @@
       class="q-mb-xl"
       :src="animal.image_link"
       spinner-color="positive"
-      spinner-size="52x"
+      spinner-size="40x"
       style="max-width: 600px; max-height: 600px"
     />
   </div>
