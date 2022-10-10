@@ -1,21 +1,23 @@
 <template>
-  <div class="q-pa-md text-center">
-    <p class="text-h4 q-pt-xl text-center">
+  <div class="q-pt-md text-center">
+    <p class="text-h5 q-pt-xl text-center">
       {{ animal.name }}
       <q-badge align="top">{{ animal.animal_type }}</q-badge>
     </p>
     <p class="text-weight-bold text-italic">Latino {{ animal.latin_name }}</p>
-    <p class="text-subtitle1">Habitat: {{ animal.habitat }}</p>
-    <p class="text-subtitle1">Diet: {{ animal.diet }}</p>
-    <p class="text-subtitle1">Geo range: {{ animal.geo_range }}</p>
-    <p class="text-h6">Max weight: </p>
-    <p class="text-h6" :class="compareAnimal.weight ? 'red' : 'green'">
-      {{ animal.weight_max }} (lbs.)
+    <p class="text-subtitle1 q-mb-xs">Habitat: {{ animal.habitat }}</p>
+    <p class="text-subtitle1 q-mb-xs">Diet: {{ animal.diet }}</p>
+    <p class="text-subtitle1 q-mb-xs">Geo range: {{ animal.geo_range }}</p>
+    <p
+      class="text-subtitle1 q-mb-xs"
+      :class="heavierAnimal ? 'red' : 'green'"
+    >
+      Max weight: {{ lbsTokg(animal.weight_max) }} (kg.)
     </p>
-    <p class="text-h6" :class="compareAnimal.weight ? 'red' : 'green'">
-      {{ lbsTokg(animal.weight_max) }} (kg.)
-    </p>
-    <p class="text-h6" :class="compareAnimal.age ? 'red' : 'green'">
+    <p
+      class="text-subtitle1 q-mb-xs"
+      :class="olderAnimal ? 'red' : 'green'"
+    >
       Long life: {{ animal.lifespan }}
     </p>
     <q-img
@@ -42,7 +44,8 @@ export default {
   name: "AnimalInfo",
   props: {
     animal: Object,
-    compareAnimal:Object ,
+    olderAnimal:Boolean,
+    heavierAnimal:Boolean,
   },
   methods: {
     lbsTokg(value) {

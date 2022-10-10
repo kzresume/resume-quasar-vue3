@@ -5,13 +5,15 @@
         v-if="animalArray"
         class="col-12 col-md-6"
         :animal="animalData[0]"
-        :compareAnimal="compareResultFirst"
+        :olderAnimal="!olderAnimal"
+        :heavierAnimal="!heavierAnimal"
       />
       <AnimalInfo
         v-if="animalArray"
         class="col-12 col-md-6"
         :animal="animalData[1]"
-        :compareAnimal="compareResultSecond"
+        :olderAnimal="olderAnimal"
+        :heavierAnimal="heavierAnimal"
       />
     </div>
   </q-page>
@@ -41,17 +43,11 @@ export default {
     animalArray() {
       return Array.isArray(this.animalData);
     },
-    compareResultFirst() {
-      return {
-        age: this.animalData[0].lifespan < this.animalData[1].lifespan,
-        weight: this.animalData[0].weight_max < this.animalData[1].weight_max,
-      };
+    olderAnimal(){
+      return this.animalData[0].lifespan > this.animalData[1].lifespan
     },
-    compareResultSecond() {
-      return {
-        age: this.animalData[0].lifespan > this.animalData[1].lifespan,
-        weight: this.animalData[0].weight_max > this.animalData[1].weight_max,
-      };
+    heavierAnimal(){
+      return this.animalData[0].weight_max < this.animalData[1].weight_max
     },
   },
   data() {

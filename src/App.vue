@@ -1,5 +1,5 @@
 <template>
-  <q-layout>
+  <q-layout class="bg-green glossy">
     <q-header elevated>
       <q-toolbar class="bg-positive glossy text-white">
         <q-toolbar-title>Random Animal Compare</q-toolbar-title>
