@@ -7,17 +7,10 @@
     <p class="text-weight-bold text-italic">Latino {{ animal.latin_name }}</p>
     <p class="text-subtitle1 q-mb-xs">Habitat: {{ animal.habitat }}</p>
     <p class="text-subtitle1 q-mb-xs">Diet: {{ animal.diet }}</p>
-    <p class="text-subtitle1 q-mb-xs">Geo range: {{ animal.geo_range }}</p>
-    <p
-      class="text-subtitle1 q-mb-xs"
-      :class="heavierAnimal ? 'red' : 'green'"
-    >
+    <p class="text-subtitle1 q-mb-xs" :class="heavierAnimal ? 'red' : 'green'">
       Max weight: {{ lbsTokg(animal.weight_max) }} (kg.)
     </p>
-    <p
-      class="text-subtitle1 q-mb-xs"
-      :class="olderAnimal ? 'red' : 'green'"
-    >
+    <p class="text-subtitle1 q-mb-xs" :class="olderAnimal ? 'red' : 'green'">
       Long life: {{ animal.lifespan }}
     </p>
     <q-img
@@ -25,8 +18,24 @@
       :src="animal.image_link"
       spinner-color="positive"
       spinner-size="40x"
-      style="max-width: 600px; max-height: 600px"
-    />
+      style="max-width: 400px; max-height: 450px"
+      fit="scale-down"
+    >
+      <template v-slot:loading>
+        <div class="text-green">
+          <q-spinner-ios />
+          <div class="q-mt-md">Loading...</div>
+        </div>
+      </template>
+      <template v-slot:error>
+        <div class="absolute-full flex flex-center bg-negative text-white">
+          Cannot load image
+        </div>
+      </template>
+      <div class="absolute-bottom-right text-subtitle2">
+        {{ animal.geo_range }}
+      </div>
+    </q-img>
   </div>
 </template>
 
@@ -44,8 +53,8 @@ export default {
   name: "AnimalInfo",
   props: {
     animal: Object,
-    olderAnimal:Boolean,
-    heavierAnimal:Boolean,
+    olderAnimal: Boolean,
+    heavierAnimal: Boolean,
   },
   methods: {
     lbsTokg(value) {
