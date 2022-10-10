@@ -63,6 +63,8 @@ export default {
     showAnimal() {
       apiClient.get("/animals/rand/2").then(({ data }) => {
         this.animalData = data;
+        this.$emit('addToHistory',data[0].name);
+        this.$emit('addToHistory',data[1].name);
       });
     },
   },

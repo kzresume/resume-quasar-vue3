@@ -4,20 +4,30 @@
       <q-toolbar class="bg-positive glossy text-white">
         <q-toolbar-title>Random Animal</q-toolbar-title>
         <q-space />
-        <q-btn color="positive" round  icon="restart_alt" @click="animalNb++" />
+        <q-btn color="positive" round icon="restart_alt" @click="animalNb++" />
         <q-space />
-        <q-btn
-          color="white"
-          text-color="positive"
-          label="GitHub"
-        />
+        <q-btn class="q-mx-md" color="white" text-color="positive" label="History">
+          <q-tooltip
+            transition-show="flip-right"
+            transition-hide="flip-left"
+            class="bg-green text-white shadow-4"
+            :offset="[10, 10]"
+          >
+            <ol>
+              <li v-for="item in history" :key="item.index">{{ item }}</li>
+            </ol>
+          </q-tooltip>
+        </q-btn>
+        <q-btn color="white" text-color="positive" label="GitHub" />
       </q-toolbar>
     </q-header>
-    <MainApp :animalNb="animalNb" />
+    <MainApp :animalNb="animalNb" @addToHistory="addItem" />
     <q-footer>
-      <q-toolbar class="bg-positive glossy" >
+      <q-toolbar class="bg-positive glossy">
         <q-space />
-        <q-toolbar-title class="text-center" color="positive">CV 2022</q-toolbar-title>
+        <q-toolbar-title class="text-center" color="positive"
+          >CV 2022</q-toolbar-title
+        >
         <q-space />
       </q-toolbar>
     </q-footer>
@@ -32,13 +42,18 @@ export default {
   name: "LayoutDefault",
 
   components: { MainApp },
+  methods: {
+    addItem(value) {
+      if (this.history.length == 16) this.history.shift();
+      this.history.push(value);
+    },
+  },
   data() {
     return {
-      showMessage: false,
       animalNb: 0,
+      history: [],
     };
   },
-  created() {},
   setup() {
     return {
       leftDrawerOpen: ref(false),
