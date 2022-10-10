@@ -1,11 +1,12 @@
 <template>
-  <q-card class=" q-ma-sm text-center">
-    <p class="text-h5 q-pt-xl text-center">
+  <q-card class="q-pt-md q-ma-sm text-center">
+    <p class="text-h6 q-pt-lg text-center">
       {{ animal.name }}
       <q-badge align="top">{{ animal.animal_type }}</q-badge>
     </p>
+    <q-separator inset class="q-mt-xs" />
     <p class="text-weight-bold text-italic">Latino {{ animal.latin_name }}</p>
-    <p class="text-subtitle1 q-mb-xs">Habitat: {{ animal.habitat }}</p>
+    <p class="text-subtitle1 q-mb-xs q-px-xs">Habitat: {{ animal.habitat }}</p>
     <p class="text-subtitle1 q-mb-xs">Diet: {{ animal.diet }}</p>
     <p class="text-subtitle1 q-mb-xs" :class="heavierAnimal ? 'red' : 'green'">
       Max weight: {{ lbsTokg(animal.weight_max) }} (kg.)
@@ -14,7 +15,7 @@
       Long life: {{ animal.lifespan }}
     </p>
     <q-img
-      class="q-mb-xl"
+      class="q-mb-xl borderRadius"
       :src="animal.image_link"
       spinner-color="positive"
       spinner-size="40x"
@@ -45,6 +46,9 @@
 }
 .green {
   color: green;
+}
+.borderRadius{
+  border-radius: 40px !important;
 }
 </style>
 

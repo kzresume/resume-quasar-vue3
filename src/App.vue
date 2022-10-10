@@ -3,7 +3,6 @@
     <q-header elevated>
       <q-toolbar class="bg-positive glossy text-white">
         <q-toolbar-title>Random Animal Compare</q-toolbar-title>
-        <q-space />
         <q-btn color="positive" round icon="restart_alt" @click="animalNb++" />
         <q-space />
         <q-btn
