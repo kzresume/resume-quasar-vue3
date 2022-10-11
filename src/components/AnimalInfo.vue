@@ -9,13 +9,13 @@
     <p class="text-subtitle1 q-mb-xs q-px-xs">Habitat: {{ animal.habitat }}</p>
     <p class="text-subtitle1 q-mb-xs">Diet: {{ animal.diet }}</p>
     <p class="text-subtitle1 q-mb-xs" :class="heavierAnimal ? 'red' : 'green'">
-      Max weight: {{ lbsTokg(animal.weight_max) }} (kg.)
+      Max weight: {{ lbsTokg(animal.weight_max) }} kg.
     </p>
     <p class="text-subtitle1 q-mb-xs" :class="olderAnimal ? 'red' : 'green'">
       Long life: {{ animal.lifespan }} yr.
     </p>
     <p class="text-subtitle1 q-mb-xs" :class="biggerAnimal ? 'red' : 'green'">
-      Size: {{ ftToMeter(animal.length_max) }} m
+      Size: {{ ftToMeter(animal.length_max) }} m.
     </p>
     <q-img
       class="q-mb-xl borderRadius"
